@@ -114,7 +114,12 @@ export default function Home() {
   // width: 613;
   // height: 48;
   // left: 68px;
-     jobs
+     if(jobs)
+
+     {
+      console.log("temp");
+
+     }
   ///form
 
   const [formData, setFormData] = useState({
@@ -322,9 +327,9 @@ export default function Home() {
           <div className="bg-white w-xl">
             <motion.div>
               <p className="italic text-gray-600 mt-50 text-2xl">
-                "Apply confidently. Grow professionally. <br />
+                Apply confidently. Grow professionally. <br />
                 The right opportunity is just a click away. <br />
-                Let’s shape your future together."
+                Let’s shape your future together.
               </p>
               <div className="flex">
                 <img

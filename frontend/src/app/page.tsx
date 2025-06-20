@@ -15,15 +15,15 @@ import {
   IconSearch,
   IconMapPin,
   IconBriefcase,
-  IconCurrencyRupee,
+ 
 } from "@tabler/icons-react"; // Import icons
 
 import { IconUserPlus, IconBuilding, IconCoins } from "@tabler/icons-react"; //
 import { useEffect } from "react";
 import { useState } from "react";
-import { formatDistanceToNow } from "date-fns";
+//import { formatDistanceToNow } from "date-fns";
 import { timeAgo } from "../../utils/timeFormatter";
-import { Slider } from "@mantine/core";
+//import { Slider } from "@mantine/core";
 //import { RangeSlider } from "@mantine/core";
 import { ChevronsDown,ChevronsRight } from "lucide-react";
 
