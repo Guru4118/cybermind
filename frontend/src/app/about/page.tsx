@@ -90,7 +90,7 @@ export default function Home() {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const response = await fetch("https://cybermind-vppn.onrender.com/jobs");
+        const response = await fetch(process.env.NEXT_PUBLIC_API_URL as string);
         const data: Job[] = await response.json();
         setJobs(data);
       } catch (error) {
@@ -192,7 +192,7 @@ export default function Home() {
     };
 
     try {
-      const res = await fetch("https://cybermind-vppn.onrender.com/jobs", {
+      const res = await fetch(process.env.NEXT_PUBLIC_API_URL as string, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
