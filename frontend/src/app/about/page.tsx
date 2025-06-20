@@ -30,6 +30,7 @@ export default function Home() {
   //const [salaryRange, setSalaryRange] = useState<[number, number]>([0, 100]);
   const [jobs, setJobs] = useState<Job[]>([]);
   
+  
 
   //const [loading, setLoading] = useState(true);
   //const [salaryRange, setSalaryRange] = useState([50000, 80000]);
@@ -113,7 +114,7 @@ export default function Home() {
   // width: 613;
   // height: 48;
   // left: 68px;
-
+     jobs
   ///form
 
   const [formData, setFormData] = useState({
