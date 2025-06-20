@@ -233,19 +233,19 @@ export default function Home() {
               radius="md"
             />
             <div className="flex gap-10  text-black  font-satoshi  font-semibold text-base">
-              <a href="http://localhost:3000/" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com" className="hover:text-blue-600">
                 Home
               </a>
-              <a href="http://localhost:3000/" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com" className="hover:text-blue-600">
                 Find Jobs
               </a>
-              <a href="http://localhost:3000/" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com" className="hover:text-blue-600">
                 Find Talents
               </a>
-              <a href="http://localhost:3000/about" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com/about" className="hover:text-blue-600">
                 About Us
               </a>
-              <a href="#" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com" className="hover:text-blue-600">
                 Testimonials
               </a>
             </div>

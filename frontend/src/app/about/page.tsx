@@ -234,19 +234,19 @@ export default function Home() {
               radius="md"
             />
             <div className="flex gap-10  text-black  font-satoshi  font-semibold text-base">
-              <a href="http://localhost:3000/" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com/" className="hover:text-blue-600">
                 Home
               </a>
-              <a href="http://localhost:3000/" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com/" className="hover:text-blue-600">
                 Find Jobs
               </a>
-              <a href="http://localhost:3000/" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com/" className="hover:text-blue-600">
                 Find Talents
               </a>
-              <a href="http://localhost:3000/about" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com/about" className="hover:text-blue-600">
                 About Us
               </a>
-              <a href="#" className="hover:text-blue-600">
+              <a href="https://cybermind1.onrender.com/" className="hover:text-blue-600">
                 Testimonials
               </a>
             </div>
@@ -279,7 +279,7 @@ export default function Home() {
                 Start your career journey
               </p>
               <button className="border-2 border-gray-50 px-4 py-1.5 text-white font-medium hover:cursor-pointer bg-black rounded hover:scale-105">
-                <a href="http://localhost:3000/">Explore Jobs</a>
+                <a href="https://cybermind1.onrender.com">Explore Jobs</a>
               </button>
             </div>
             <p className="text-lg text-gray-800 font-medium mb-4">
@@ -342,7 +342,7 @@ export default function Home() {
                     Discover top job opportunities
                   </p>
                   <button className="border-2 mt-5 border-gray-50 px-5 ml-20 h-10 text-white font-medium hover:cursor-pointer bg-black rounded hover:scale-105">
-                    <a href="http://localhost:3000/">Search Now</a>
+                    <a href="https://cybermind1.onrender.com">Search Now</a>
                   </button>
                 </div>
               </div>
