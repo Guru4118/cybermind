@@ -141,84 +141,106 @@ export default function Home() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const defaultDeadline = new Date();
-    defaultDeadline.setDate(defaultDeadline.getDate() + 38);
+  e.preventDefault();
 
-    const salaryMin = Number(formData.salaryMin);
-    console.log(formData.company);
+  const errors: Record<string, string> = {};
 
-    const normalizedCompany = formData.company.trim().toLowerCase();
-    const knownCompanies = ["amazon", "swiggy", "tesla", "cybermind"];
-    console.log(normalizedCompany);
-    console.log(knownCompanies)
-    
+  // Validate
+  if (!formData.title.trim()) errors.title = "Job title is required";
+  if (!formData.company.trim()) errors.company = "Company name is required";
+  if (!formData.location) errors.location = "Location is required";
+  if (!formData.type) errors.type = "Job type is required";
+  if (!formData.salaryMin || isNaN(Number(formData.salaryMin)))
+    errors.salaryMin = "Enter a valid minimum salary";
+  if (!formData.salaryMax || isNaN(Number(formData.salaryMax)))
+    errors.salaryMax = "Enter a valid maximum salary";
+  if (!formData.description.trim())
+    errors.description = "Job description is required";
+  if (formData.deadline) {
+    const inputDate = new Date(formData.deadline);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (inputDate < today)
+      errors.deadline = "Deadline can't be in the past";
+  }
 
-    const logo = knownCompanies.includes(normalizedCompany)
-      ? `/${normalizedCompany}.png`
-      : "/cybermind.png";
+  if (Object.keys(errors).length > 0) {
+    alert(Object.values(errors).join("\n"));
+    return;
+  }
 
-      console.log(logo);
+  // Prepare fallback/defaults
+  const defaultDeadline = new Date();
+  defaultDeadline.setDate(defaultDeadline.getDate() + 38);
 
-    let experience = "";
-    if (salaryMin < 300000) {
-      experience = "0-1 yr Exp";
-    } else if (salaryMin >= 300000 && salaryMin < 500000) {
-      experience = "1-3 yr Exp";
-    } else if (salaryMin >= 500000 && salaryMin < 800000) {
-      experience = "2-5 yr Exp";
-    } else if (salaryMin >= 800000 && salaryMin < 1000000) {
-      experience = "5-6 yr Exp";
-    } else {
-      experience = "7-8 yr Exp";
-    }
-    const payload = {
-      title: formData.title,
-      company: formData.company,
-      logo:logo, // fallback// or a default logo URL
-      location: formData.location,
-      type: formData.type,
-      experience, // <- dynamic based on salaryMin
-      salaryMin,
-      salaryMax: Number(formData.salaryMax),
-      minMonth: salaryMin / 12,
-      maxMonth: Number(formData.salaryMax) / 12,
-      description: formData.description,
-      requirements: "To be updated",
-      responsibilities: "To be updated",
-      applicationDeadline: formData.deadline
-        ? new Date(formData.deadline).toISOString().split("T")[0]
-        : defaultDeadline.toISOString().split("T")[0],
-    };
+  const salaryMin = Number(formData.salaryMin);
+  const normalizedCompany = formData.company.trim().toLowerCase();
+  const knownCompanies = ["amazon", "swiggy", "tesla", "cybermind"];
 
-    try {
-      const res = await fetch(process.env.NEXT_PUBLIC_API_URL as string, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      });
+  const logo = knownCompanies.includes(normalizedCompany)
+    ? `/${normalizedCompany}.png`
+    : "/cybermind.png";
 
-      if (!res.ok) throw new Error("Failed to post job");
+  let experience = "";
+  if (salaryMin < 300000) {
+    experience = "0-1 yr Exp";
+  } else if (salaryMin < 500000) {
+    experience = "1-3 yr Exp";
+  } else if (salaryMin < 800000) {
+    experience = "2-5 yr Exp";
+  } else if (salaryMin < 1000000) {
+    experience = "5-6 yr Exp";
+  } else {
+    experience = "7-8 yr Exp";
+  }
 
-      alert("Job posted successfully!");
-      // Optionally reset form
-      setFormData({
-        title: "",
-        company: "",
-        location: "",
-        type: "",
-        salaryMin: "",
-        salaryMax: "",
-        deadline: "",
-        description: "",
-      });
-    } catch (err) {
-      console.error(err);
-      alert("Error posting job.");
-    }
+  const payload = {
+    title: formData.title,
+    company: formData.company,
+    logo,
+    location: formData.location,
+    type: formData.type,
+    experience,
+    salaryMin,
+    salaryMax: Number(formData.salaryMax),
+    minMonth: salaryMin / 12,
+    maxMonth: Number(formData.salaryMax) / 12,
+    description: formData.description,
+    requirements: "To be updated",
+    responsibilities: "To be updated",
+    applicationDeadline: formData.deadline
+      ? new Date(formData.deadline).toISOString().split("T")[0]
+      : defaultDeadline.toISOString().split("T")[0],
   };
+
+  try {
+    const res = await fetch(process.env.NEXT_PUBLIC_API_URL as string, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) throw new Error("Failed to post job");
+
+    alert("Job posted successfully!");
+    setFormData({
+      title: "",
+      company: "",
+      location: "",
+      type: "",
+      salaryMin: "",
+      salaryMax: "",
+      deadline: "",
+      description: "",
+    });
+  } catch (err) {
+    console.error(err);
+    alert("Error posting job.");
+  }
+};
+
 
   return (
     <div className=" ">
