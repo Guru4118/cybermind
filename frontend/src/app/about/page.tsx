@@ -24,15 +24,15 @@ import { ChevronsDown,ChevronsRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  const [search, setSearch] = useState("");
-  const [location, setLocation] = useState("");
-  const [jobType, setJobType] = useState<string | null>(null);
+  //const [search, setSearch] = useState("");
+  //const [location, setLocation] = useState("");
+  //const [jobType, setJobType] = useState<string | null>(null);
   //const [salaryRange, setSalaryRange] = useState<[number, number]>([0, 100]);
   const [jobs, setJobs] = useState<Job[]>([]);
   
 
   //const [loading, setLoading] = useState(true);
-  const [salaryRange, setSalaryRange] = useState([50000, 80000]);
+  //const [salaryRange, setSalaryRange] = useState([50000, 80000]);
 
   const [opened, setOpened] = useState(false);
   //const [salaryMin, setSalaryMin] = useState("");
@@ -46,10 +46,10 @@ export default function Home() {
   //   setter(cleaned);
   // };
 
-  const minSalary = 0;
-  const maxSalary = 200000;
-  const step = 1000;
-  const logos = ["/amazon.png", "/tesla.png", "/swiggy.png"];
+  //const minSalary = 0;
+  //const maxSalary = 200000;
+  //const step = 1000;
+  //const logos = ["/amazon.png", "/tesla.png", "/swiggy.png"];
 
   //const [salaryRange, setSalaryRange] = useState<[number, number]>([50000, 80000]);
 

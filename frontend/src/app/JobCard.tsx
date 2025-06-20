@@ -1,6 +1,16 @@
 import { Card, Text, Badge, Group, Avatar, List, Button } from '@mantine/core';
+interface Job {
+  logo: string;
+  posted: string;
+  title: string;
+  experience: string;
+  location: string;
+  salary: string;
+  summary: string[];
+}
 
-export default function JobCard({ job }: { job: any }) {
+export default function JobCard({ job }: { job: Job }) {
+  
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Group justify="space-between">
