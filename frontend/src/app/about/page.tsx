@@ -2,29 +2,23 @@
 
 import {
   Image,
-  Card,
-  Text,
-  Badge,
-  Group,
-  Avatar,
-  List,
-  Button,
+  
 } from "@mantine/core";
 
-import {
-  IconSearch,
-  IconMapPin,
-  IconBriefcase,
-  IconCurrencyRupee,
-} from "@tabler/icons-react"; // Import icons
+// import {
+//   IconSearch,
+//   IconMapPin,
+//   IconBriefcase,
+//   IconCurrencyRupee,
+// } from "@tabler/icons-react"; // Import icons
 
-import { IconUserPlus, IconBuilding, IconCoins } from "@tabler/icons-react"; //
+//import { IconUserPlus, IconBuilding, IconCoins } from "@tabler/icons-react"; //
 import { useEffect } from "react";
 import { useState } from "react";
-import { formatDistanceToNow } from "date-fns";
-import { timeAgo } from "../../../utils/timeFormatter";
-import { Slider } from "@mantine/core";
-import { RangeSlider } from "@mantine/core";
+//import { formatDistanceToNow } from "date-fns";
+//import { timeAgo } from "../../../utils/timeFormatter";
+//import { Slider } from "@mantine/core";
+//import { RangeSlider } from "@mantine/core";
 import { ChevronsDown,ChevronsRight } from "lucide-react";
 
 import { motion } from "framer-motion";
@@ -37,20 +31,20 @@ export default function Home() {
   const [jobs, setJobs] = useState<Job[]>([]);
   
 
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
   const [salaryRange, setSalaryRange] = useState([50000, 80000]);
 
   const [opened, setOpened] = useState(false);
-  const [salaryMin, setSalaryMin] = useState("");
-  const [salaryMax, setSalaryMax] = useState("");
+  //const [salaryMin, setSalaryMin] = useState("");
+  //const [salaryMax, setSalaryMax] = useState("");
 
-  const handleSalaryChange = (
-    val: string,
-    setter: React.Dispatch<React.SetStateAction<string>>
-  ) => {
-    const cleaned = val.replace(/\D/g, "");
-    setter(cleaned);
-  };
+  // const handleSalaryChange = (
+  //   val: string,
+  //   setter: React.Dispatch<React.SetStateAction<string>>
+  // ) => {
+  //   const cleaned = val.replace(/\D/g, "");
+  //   setter(cleaned);
+  // };
 
   const minSalary = 0;
   const maxSalary = 200000;
@@ -78,15 +72,15 @@ export default function Home() {
     postedAt: string;
   };
 
-  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Math.min(Number(e.target.value), salaryRange[1] - step);
-    setSalaryRange([value, salaryRange[1]]);
-  };
+  // const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const value = Math.min(Number(e.target.value), salaryRange[1] - step);
+  //   setSalaryRange([value, salaryRange[1]]);
+  // };
 
-  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Math.max(Number(e.target.value), salaryRange[0] + step);
-    setSalaryRange([salaryRange[0], value]);
-  };
+  // const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const value = Math.max(Number(e.target.value), salaryRange[0] + step);
+  //   setSalaryRange([salaryRange[0], value]);
+  // };
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -101,21 +95,21 @@ export default function Home() {
     fetchJobs();
   }, []);
 
-  const filteredJobs = jobs.filter((job) => {
-    const matchesSearch = job.title
-      .toLowerCase()
-      .includes(search.toLowerCase());
-    const matchesLocation = location
-      ? job.location.toLowerCase().includes(location.toLowerCase())
-      : true;
-    const matchesJobType = jobType
-      ? job.type.toLowerCase() === jobType.toLowerCase()
-      : true;
-    const matchesSalary =
-      job.maxMonth >= salaryRange[0] && job.minMonth <= salaryRange[1];
+  // const filteredJobs = jobs.filter((job) => {
+  //   const matchesSearch = job.title
+  //     .toLowerCase()
+  //     .includes(search.toLowerCase());
+  //   const matchesLocation = location
+  //     ? job.location.toLowerCase().includes(location.toLowerCase())
+  //     : true;
+  //   const matchesJobType = jobType
+  //     ? job.type.toLowerCase() === jobType.toLowerCase()
+  //     : true;
+  //   const matchesSalary =
+  //     job.maxMonth >= salaryRange[0] && job.minMonth <= salaryRange[1];
 
-    return matchesSearch && matchesLocation && matchesJobType && matchesSalary;
-  });
+  //   return matchesSearch && matchesLocation && matchesJobType && matchesSalary;
+  // });
   // width: 613;
   // height: 48;
   // left: 68px;
@@ -376,7 +370,7 @@ export default function Home() {
 
         <p className="md:text-xl font-medium text-black">
           Discover your next career move with our all-in-one job finding platform.
-          Whether you're a fresher or a seasoned professional — we connect talent
+          Whether a fresher or a seasoned professional — we connect talent
           with opportunities across industries. Built for ease, designed to empower.
         </p>
       </div>
@@ -392,7 +386,7 @@ export default function Home() {
           <p className="font-semibold leading-relaxed">
             Unlock a world of job opportunities tailored just for you. CareerConnect Pro 
             is your smart career companion that offers personalized job matches, resume 
-            tools, and insights to help you land your dream role — whether you're just starting 
+            tools, and insights to help you land your dream role — whether you just starting 
             or aiming higher.
           </p>
         </motion.div>
@@ -444,7 +438,7 @@ export default function Home() {
           <h3 className="text-lg font-bold mb-2">Smart Filters & Alerts</h3>
           <p className="leading-relaxed">
             Narrow down your search with filters for job type, location, salary range,
-            and experience. Enable real-time alerts so you're instantly notified when a
+            and experience. Enable real-time alerts so you instantly notified when a
             matching opportunity goes live — never miss your chance.
           </p>
         </motion.div>

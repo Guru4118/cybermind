@@ -24,7 +24,7 @@ import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
 import { timeAgo } from "../../utils/timeFormatter";
 import { Slider } from "@mantine/core";
-import { RangeSlider } from "@mantine/core";
+//import { RangeSlider } from "@mantine/core";
 import { ChevronsDown,ChevronsRight } from "lucide-react";
 
 
@@ -36,25 +36,25 @@ export default function Home() {
   //const [salaryRange, setSalaryRange] = useState<[number, number]>([0, 100]);
   const [jobs, setJobs] = useState<Job[]>([]);
 
-  const [loading, setLoading] = useState(true);
+  //const [loading, setLoading] = useState(true);
   const [salaryRange, setSalaryRange] = useState([0, 100000]);
 
   const [opened, setOpened] = useState(false);
-  const [salaryMin, setSalaryMin] = useState("");
-  const [salaryMax, setSalaryMax] = useState("");
+  //const [salaryMin, setSalaryMin] = useState("");
+  //const [salaryMax, setSalaryMax] = useState("");
 
-  const handleSalaryChange = (
-    val: string,
-    setter: React.Dispatch<React.SetStateAction<string>>
-  ) => {
-    const cleaned = val.replace(/\D/g, "");
-    setter(cleaned);
-  };
+  // const handleSalaryChange = (
+  //   val: string,
+  //   setter: React.Dispatch<React.SetStateAction<string>>
+  // ) => {
+  //   const cleaned = val.replace(/\D/g, "");
+  //   setter(cleaned);
+  // };
 
   const minSalary = 0;
   const maxSalary = 200000;
   const step = 1000;
-  const logos = ["/amazon.png", "/tesla.png", "/swiggy.png"];
+  //const logos = ["/amazon.png", "/tesla.png", "/swiggy.png"];
 
   //const [salaryRange, setSalaryRange] = useState<[number, number]>([50000, 80000]);
 
