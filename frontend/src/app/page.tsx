@@ -11,7 +11,7 @@ import {
   Button,
 } from "@mantine/core";
 
-import { IconSearch, IconMapPin, IconBriefcase } from "@tabler/icons-react"; // Import icons
+import { IconSearch, IconMapPin } from "@tabler/icons-react"; // Import icons
 
 import { IconUserPlus, IconBuilding, IconCoins } from "@tabler/icons-react"; //
 import { useEffect } from "react";
