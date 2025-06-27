@@ -361,7 +361,7 @@ export default function Home() {
                   onChange={(e) => setLocation(e.target.value)}
                   className="w-full h-[48px] pl-12 pr-10 bg- text-[#686868] rounded-md pt-2 text-[16px] font-medium appearance-none focus:outline-none focus:ring-0 border-none"
                 >
-                  <option value="" disabled hidden>
+                  <option value="" >
                     Preferred Location
                   </option>
                   <option value="remote">Remote</option>
@@ -402,7 +402,7 @@ export default function Home() {
                   onChange={(e) => setJobType(e.target.value)}
                   className="w-70 h-[48px] pl-11 pr-10 pt-1  text-[#686868] rounded-md text-[16px] font-medium appearance-none focus:outline-none focus:ring-0 border-none"
                 >
-                  <option value="" disabled hidden>
+                  <option value="" >
                     Job type
                   </option>
                   <option value="full-time">Full-time</option>
@@ -543,7 +543,7 @@ export default function Home() {
                 </div>
 
                 {/* Time Ago Badge */}
-                <div className="absolute top-[16px] left-[222px] w-[75px] h-[33px] rounded-[10px] px-[10px] py-[7px] flex items-center justify-center bg-[#B0D9FF] text-black gap-[10px]">
+                <div className="absolute top-[16px] left-[222px] w-[75px] h-[33px] rounded-[10px] px-[10px] py-[7px] flex items-center justify-center bg-[#B0D9FF] text-black text-sm gap-[10px]">
                   {" "}
                   {/* */}
                   <Badge
