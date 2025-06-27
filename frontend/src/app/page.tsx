@@ -545,7 +545,7 @@ export default function Home() {
                 </div>
 
                 {/* Time Ago Badge */}
-                <div className="absolute top-[16px] left-[222px] w-[75px] h-[33px] rounded-[10px] px-[10px] py-[7px] flex items-center justify-center bg-[#B0D9FF] text-black text-sm gap-[10px]">
+                <div className="absolute top-[16px] left-[222px] w-[75px] h-[33px] rounded-[10px] px-[8px] py-[7px] flex items-center justify-center bg-[#B0D9FF] text-black text-sm gap-[10px]">
                   {" "}
                   {/* */}
                   <Badge
